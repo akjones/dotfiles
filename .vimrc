@@ -1,5 +1,10 @@
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
 syntax on
+filetype plugin indent on
 set background=dark
+
 colorscheme ir_black
 set ls=2
 set hlsearch 
