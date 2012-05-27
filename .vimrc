@@ -12,6 +12,7 @@ set incsearch
 set ruler
 set ignorecase
 set number
+set guifont=Menlo:h13
 
 set smartindent
 set tabstop=4
