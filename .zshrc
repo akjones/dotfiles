@@ -14,6 +14,8 @@ alias runHotJetty="gradle -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend
 alias start_mongo="mongod run --config /usr/local/etc/mongod.conf"
 alias start_pg="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias gpr="git pull --rebase"
+alias berspec="bundle exec rspec"
+alias v="mvim"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -39,6 +41,6 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/users/akjones/lib/gradle/bin
+export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/users/akjones/lib/gradle/bin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
