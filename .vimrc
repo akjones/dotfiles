@@ -13,6 +13,7 @@ set ruler
 set ignorecase
 set number
 set guifont=Menlo:h13
+set visualbell
 
 set smartindent
 set tabstop=4
@@ -23,3 +24,5 @@ set expandtab
 if has("gui_running")
     set guioptions=egmrt
 endif
+
+command! Tidy :exec ":%! tidy -xml -i -q"
