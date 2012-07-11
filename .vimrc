@@ -21,8 +21,7 @@ set shiftwidth=4
 set expandtab 
 
 set list
-set listchars=tab:\|_,trail:·
-
+set list listchars=tab:»·,trail:·
 
 if has("gui_running")
     set guioptions=egmrt
