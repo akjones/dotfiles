@@ -10,13 +10,19 @@ ZSH_THEME="alanpeabody"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# General aliases
 alias runHotJetty="gradle -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1337 jettyRun"
 alias start_mongo="mongod run --config /usr/local/etc/mongod.conf"
 alias start_pg="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias v="mvim"
+
+# Git aliases
 alias gpr="git pull --rebase"
 alias gspr="git stash; git pull --rebase; git stash pop"
+
+# Rails aliases
 alias berspec="bundle exec rspec"
-alias v="mvim"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
