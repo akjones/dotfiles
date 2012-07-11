@@ -5,7 +5,7 @@ syntax on
 filetype plugin indent on
 set background=dark
 
-colorscheme ir_black
+colorscheme molokai
 set ls=2
 set hlsearch 
 set incsearch
@@ -19,6 +19,9 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab 
+
+set list
+set listchars=tab:\|_,trail:·
 
 
 if has("gui_running")
