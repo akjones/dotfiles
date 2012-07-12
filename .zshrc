@@ -24,6 +24,9 @@ alias gspr="git stash; git pull --rebase; git stash pop"
 # Rails aliases
 alias berspec="bundle exec rspec"
 
+# GetUp! aliases
+alias getup_bastion="ssh ubuntu@204.236.229.45"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
