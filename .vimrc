@@ -23,6 +23,15 @@ set expandtab
 set list
 set list listchars=tab:»·,trail:·
 
+" Removes trailing spaces
+function TrimWhiteSpace()
+    %s/\s*$//
+    ''
+:endfunction
+
+map <F2> :call TrimWhiteSpace()<CR>
+map! <F2> :call TrimWhiteSpace()<CR>
+
 if has("gui_running")
     set guioptions=egmrt
 endif
