@@ -34,12 +34,12 @@ map! <F2> :call TrimWhiteSpace()<CR>
 
 " Attempts to auto fix formatting across whole file
 function FixFormatting()
-    ggVG=
+    
     ''
 :endfunction
 
-map <F1> :call FixFormatting()<CR>
-map! <F1> :call FixFormatting()<CR>
+map <F1> mkHmlggVG=`lzt`k
+map! <F1> mkHmlggVG=`lzt`k
 
 if has("gui_running")
     set guioptions=egmrt
