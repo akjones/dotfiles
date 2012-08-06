@@ -35,6 +35,7 @@ alias berspec='bundle exec rspec'
 
 # GetUp! aliases
 alias getup_bastion='ssh ubuntu@204.236.229.45'
+alias getup_ci='ssh jenkins@192.168.1.151'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE='true'
@@ -63,3 +64,4 @@ unsetopt correct_all
 export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/users/akjones/lib/gradle/bin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
