@@ -59,6 +59,7 @@ plugins=(git brew gradle osx pip ruby gem rvm)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
+unsetopt histverify
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/users/akjones/lib/gradle/bin:/usr/local/share/npm/bin
