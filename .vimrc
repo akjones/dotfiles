@@ -22,14 +22,10 @@ set expandtab
 set list
 set list listchars=tab:»·,trail:·
 
-if has('unix')
-  let s:uname = system('uname')
-  if s:uname == 'Linux'
-     set guifont=Ubuntu\ Mono 13
-  endif
-  elseif s:uname == 'Darwin'
-    set guifont=Menlo:h13
-  endif
+if has('macunix')
+  set guifont=Menlo:h13
+elseif has('unix')
+  set guifont=Ubuntu\ Mono\ 13
 endif
 
 " Removes trailing spaces
