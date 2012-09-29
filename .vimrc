@@ -12,7 +12,6 @@ set incsearch
 set ruler
 set ignorecase
 set number
-set guifont=Menlo:h13
 set visualbell
 
 set smartindent
@@ -22,6 +21,16 @@ set expandtab
 
 set list
 set list listchars=tab:»·,trail:·
+
+if has('unix')
+  let s:uname = system('uname')
+  if s:uname == 'Linux'
+     set guifont=Ubuntu\ Mono 13
+  endif
+  elseif s:uname == 'Darwin'
+    set guifont=Menlo:h13
+  endif
+endif
 
 " Removes trailing spaces
 function TrimWhiteSpace()
