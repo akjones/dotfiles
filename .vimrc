@@ -28,6 +28,8 @@ elseif has('unix')
   set guifont=Ubuntu\ Mono\ 13
 endif
 
+autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
+
 " Removes trailing spaces
 function TrimWhiteSpace()
     %s/\s*$//
