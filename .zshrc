@@ -66,3 +66,6 @@ export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+
+# Use Vim key bindings
+bindkey -v
