@@ -69,3 +69,7 @@ NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 
 # Use Vim key bindings
 bindkey -v
+
+export ARDUINO_DIR=/home/andrew/lib/arduino
+export ARDMK_DIR=/home/andrew/projects/arduino/Arduino-Makefile
+export AVR_TOOLS_DIR=/usr
