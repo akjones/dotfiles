@@ -29,7 +29,7 @@ alias gspr='git stash; git pull --rebase; git stash pop'
 # Rails aliases
 alias rc='rails console'
 alias rg='rails generate'
-alias rs='rails server'
+alias rs='rails server thin'
 alias be='bundle exec'
 alias berspec='bundle exec rspec'
 
