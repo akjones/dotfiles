@@ -1,2 +1,3 @@
 --type-set=html=.haml
 --type-set=css=.sass,.scss
+--type=nosql
