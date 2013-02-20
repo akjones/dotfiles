@@ -7,7 +7,7 @@ set background=dark
 
 colorscheme molokai
 set ls=2
-set hlsearch 
+set hlsearch
 set incsearch
 set ruler
 set ignorecase
@@ -53,3 +53,5 @@ if has("gui_running")
 endif
 
 command! Tidy :exec ":%! tidy -xml -i -q"
+
+let g:Powerline_symbols = 'fancy'
