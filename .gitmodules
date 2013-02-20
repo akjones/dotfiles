@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/vim-symbols-strings"]
 	path = .vim/bundle/vim-symbols-strings
 	url = git://github.com/rorymckinley/vim-symbols-strings.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
