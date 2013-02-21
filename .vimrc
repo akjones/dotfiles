@@ -48,6 +48,9 @@ function FixFormatting()
 map <F1> mkHmlggVG=`lzt`k
 map! <F1> mkHmlggVG=`lzt`k
 
+map <F3> :nohl<CR>
+map! <F3> :nohl<CR>
+
 if has("gui_running")
     set guioptions=egmrt
 endif
