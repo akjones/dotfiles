@@ -16,6 +16,7 @@ alias runHotJetty='gradle -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend
 alias start_mongo='mongod run --config /usr/local/etc/mongod.conf'
 alias start_pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias v='mvim'
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 # Git aliases
 alias gs='git status'
