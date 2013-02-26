@@ -78,3 +78,5 @@ bindkey -M vicmd '^R' history-incremental-search-backward
 export ARDUINO_DIR=/home/andrew/lib/arduino
 export ARDMK_DIR=/home/andrew/projects/arduino/Arduino-Makefile
 export AVR_TOOLS_DIR=/usr
+
+export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
