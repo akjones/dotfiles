@@ -14,7 +14,7 @@ ZSH_THEME='alanpeabody'
 # General aliases
 alias runHotJetty='gradle -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1337 jettyRun'
 alias start_mongo='mongod run --config /usr/local/etc/mongod.conf'
-alias start_pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias start_pg='pg_ctl -l /usr/local/var/postgres/server.log start'
 alias v='mvim'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
@@ -80,3 +80,4 @@ export ARDMK_DIR=/home/andrew/projects/arduino/Arduino-Makefile
 export AVR_TOOLS_DIR=/usr
 
 export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
+export PGDATA='/usr/local/var/postgres'
