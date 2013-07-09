@@ -4,3 +4,5 @@
 --type-set=coffee=.coffee
 --type=nosql
 --type=nolog
+
+--ignore-dir=tmp
