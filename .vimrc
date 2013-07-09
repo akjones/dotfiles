@@ -15,9 +15,9 @@ set number
 set visualbell
 
 set smartindent
-set tabstop=4
-set shiftwidth=4
-set expandtab 
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 set list
 set list listchars=tab:»·,trail:·
