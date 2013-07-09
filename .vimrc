@@ -28,6 +28,8 @@ elseif has('unix')
   set guifont=Ubuntu\ Mono\ 13
 endif
 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/public/*
+
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 
 " Removes trailing spaces
