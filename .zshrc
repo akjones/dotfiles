@@ -16,6 +16,7 @@ alias runHotJetty='gradle -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend
 alias start_mongo='mongod run --config /usr/local/etc/mongod.conf'
 alias start_pg='pg_ctl -l /usr/local/var/postgres/server.log start'
 alias start_redis='redis-server /usr/local/etc/redis.conf'
+alias start_es='elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml'
 alias v='mvim'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
