@@ -19,6 +19,7 @@ alias start_redis='redis-server /usr/local/etc/redis.conf'
 alias start_es='elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml'
 alias v='mvim'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias love="/Applications/love.app/Contents/MacOS/love"
 
 # Git aliases
 alias gs='git status'
