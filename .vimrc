@@ -64,7 +64,7 @@ map! <F2> :call TrimWhiteSpace()<CR>
 
 " Attempts to auto fix formatting across whole file
 function FixFormatting()
-    
+    ggVG=
     ''
 :endfunction
 
