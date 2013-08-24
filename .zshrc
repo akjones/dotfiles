@@ -71,9 +71,12 @@ unsetopt histverify
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/users/akjones/lib/gradle/bin:/usr/local/share/npm/bin
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+if [[ `uname` == 'Darwin' ]] then
+  export PATH=$PATH:/users/akjones/lib/gradle/bin
+fi
 
 # Use Vim key bindings
 bindkey -v
@@ -82,9 +85,13 @@ bindkey -v
 bindkey -M viins '^R' history-incremental-search-backward
 bindkey -M vicmd '^R' history-incremental-search-backward
 
-export ARDUINO_DIR=/home/andrew/lib/arduino
-export ARDMK_DIR=/home/andrew/projects/arduino/Arduino-Makefile
-export AVR_TOOLS_DIR=/usr
+if [[ `uname` == 'Linux' ]] then
+  export ARDUINO_DIR=/home/andrew/lib/arduino
+  export ARDMK_DIR=/home/andrew/projects/arduino/Arduino-Makefile
+  export AVR_TOOLS_DIR=/usr
+fi
 
-export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
-export PGDATA='/usr/local/var/postgres'
+if [[ `uname` == 'Darwin' ]] then
+  export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
+  export PGDATA='/usr/local/var/postgres'
+fi
