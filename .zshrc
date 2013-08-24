@@ -17,9 +17,13 @@ alias start_mongo='mongod run --config /usr/local/etc/mongod.conf'
 alias start_pg='pg_ctl -l /usr/local/var/postgres/server.log start'
 alias start_redis='redis-server /usr/local/etc/redis.conf'
 alias start_es='elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml'
-alias v='mvim'
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias love="/Applications/love.app/Contents/MacOS/love"
+
+# Mac aliases
+if [[ `uname` == 'Darwin' ]] then
+  alias v='mvim'
+  alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+  alias love="/Applications/love.app/Contents/MacOS/love"
+fi
 
 # Git aliases
 alias gs='git status'
