@@ -32,6 +32,7 @@ alias gci='git commit'
 alias gco='git checkout '
 alias gp='git push'
 alias gpr='git pull --rebase'
+alias gpom='git push origin master'
 alias gspr='git stash; git pull --rebase; git stash pop'
 
 # Rails aliases
@@ -40,10 +41,6 @@ alias rg='rails generate'
 alias rs='rails server thin'
 alias be='bundle exec'
 alias berspec='bundle exec rspec'
-
-# GetUp! aliases
-alias getup_bastion='ssh ubuntu@204.236.229.45'
-alias getup_ci='ssh jenkins@192.168.1.151'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE='true'
