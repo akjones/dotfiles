@@ -24,6 +24,7 @@ Bundle 'Valloric/YouCompleteMe'
 syntax on
 filetype plugin indent on
 set background=dark
+set t_Co=256
 
 colorscheme molokai
 set ls=2
