@@ -5,3 +5,5 @@
 *.swp
 .irb-history
 .vim/bundle
+.emacs.d/.smex-items
+.emacs.d/backups/
