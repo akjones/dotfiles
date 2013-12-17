@@ -20,6 +20,8 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'tpope/vim-haml'
+Bundle 'rking/ag.vim'
 
 syntax on
 filetype plugin indent on
