@@ -76,7 +76,8 @@
 
 (setq sentence-end-double-space nil)
 (setq shift-select-mode nil)
-(setq whitespace-style '(face trailing lines-tail tabs))
+(setq whitespace-style '(face trailing lines-tail tabs space-before-tab indentation empty space-after-tab))
+(setq whitespace-action '(auto-cleanup))
 (setq whitespace-line-column 80)
 (add-to-list 'safe-local-variable-values '(whitespace-line-column . 80))
 
@@ -122,15 +123,11 @@
                                                ,(make-char 'greek-iso8859-7 107))
                                nil)))))))
 
-;;;;;;;;;;;;;;;;;
-;; color theme ;;
-;;;;;;;;;;;;;;;;;
+;; color theme
 
 (color-theme-molokai)
 
-;;;;;;;;;;;
-;; faces ;;
-;;;;;;;;;;;
+;; faces
 
 ;; to choose a font (and size), you can use this code
 
@@ -162,3 +159,10 @@
         (progn (find-file user-init-file)
                (search-forward "/path/to/extempore/" nil t 2)
                (message "You need to set your Extempore path!"))))
+
+
+;;;;;;;;;;;;;;;;;;
+;; coffeescript ;;
+;;;;;;;;;;;;;;;;;;
+
+(custom-set-variables '(coffee-tab-width 2))
