@@ -7,3 +7,4 @@
 .vim/bundle
 .emacs.d/.smex-items
 .emacs.d/backups/
+.emacs.d/url/
