@@ -3,8 +3,11 @@
 .swo
 .swp
 *.swp
+[#]*[#]
+.[#]*
 .irb-history
 .vim/bundle
 .emacs.d/.smex-items
 .emacs.d/backups/
 .emacs.d/url/
+.emacs.d/auto-save-list
