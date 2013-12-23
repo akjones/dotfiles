@@ -82,6 +82,7 @@ bindkey -v
 bindkey -M viins '^R' history-incremental-search-backward
 bindkey -M vicmd '^R' history-incremental-search-backward
 
+# Environment variables
 if [[ `uname` == 'Linux' ]] then
   export ARDUINO_DIR=/home/andrew/lib/arduino
   export ARDMK_DIR=/home/andrew/projects/arduino/Arduino-Makefile
@@ -91,6 +92,7 @@ fi
 if [[ `uname` == 'Darwin' ]] then
   export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
   export PGDATA='/usr/local/var/postgres'
+  export EXTEMPORE='/usr/local/Cellar/extempore/HEAD'
 fi
 
 # Automatically run Ruby scripts with "bundle exec" (but only when appropriate).
