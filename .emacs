@@ -48,7 +48,6 @@
       ido-max-prospects 10)
 
 (ido-mode 1)
-
 (ido-ubiquitous-mode 1)
 
 (global-set-key (kbd "M-x") 'smex)
@@ -80,8 +79,7 @@
 
 (setq sentence-end-double-space nil)
 (setq shift-select-mode nil)
-(setq whitespace-style '(face trailing lines-tail tabs space-before-tab indentation empty space-after-tab))
-(setq whitespace-action '(auto-cleanup))
+(setq whitespace-style '(face trailing lines-tail tabs))
 (setq whitespace-line-column 80)
 (add-to-list 'safe-local-variable-values '(whitespace-line-column . 80))
 
