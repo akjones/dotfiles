@@ -25,6 +25,8 @@
            markdown-mode
            org
            smex
+           color-theme-molokai
+           coffee-mode
            yasnippet))
   (if (not (package-installed-p package))
       (package-install package)))
