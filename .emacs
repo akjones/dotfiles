@@ -2,6 +2,11 @@
 ;; key bindings ;;
 ;;;;;;;;;;;;;;;;;;
 
+(global-set-key (kbd "C-c <left>") 'shrink-window-horizontally)
+(global-set-key (kbd "C-c <right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "C-c <down>") 'shrink-window)
+(global-set-key (kbd "C-c <up>") 'enlarge-window)
+
 ;;;;;;;;;;
 ;; elpa ;;
 ;;;;;;;;;;
@@ -155,14 +160,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.ir$" . llvm-mode))
 (add-to-list 'auto-mode-alist '("\\.ll$" . llvm-mode))
-
-;; you can delete this once you've setup your extempore path
-(if (string-equal user-extempore-directory "/path/to/extempore/")
-    (if user-init-file
-        (progn (find-file user-init-file)
-               (search-forward "/path/to/extempore/" nil t 2)
-               (message "You need to set your Extempore path!"))))
-
 
 ;;;;;;;;;;;;;;;;;;
 ;; coffeescript ;;
