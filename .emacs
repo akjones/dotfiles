@@ -1,3 +1,7 @@
+;;;;;;;;;;;;;;;;;;
+;; key bindings ;;
+;;;;;;;;;;;;;;;;;;
+
 ;;;;;;;;;;
 ;; elpa ;;
 ;;;;;;;;;;
@@ -118,10 +122,9 @@
           '(lambda ()
              (font-lock-add-keywords
               nil `(("(?\\(lambda\\>\\)"
-                     (0 (progn (compose-region (ma
-                                                tch-beginning 1) (match-end 1)
+                     (0 (progn (compose-region (match-beginning 1) (match-end 1)
                                                ,(make-char 'greek-iso8859-7 107))
-                               nil)))))))
+                                                              nil)))))))
 
 ;; color theme
 
@@ -143,7 +146,7 @@
 ;;;;;;;;;;;;;;;
 
 ;; set the path to your extempore-directory
-(setq user-extempore-directory "/user/local/Cellar/extempore/HEAD")
+(setq user-extempore-directory "/usr/local/Cellar/extempore/HEAD/")
 (autoload 'extempore-mode (concat user-extempore-directory "extras/extempore.el") "" t)
 (add-to-list 'auto-mode-alist '("\\.xtm$" . extempore-mode))
 
