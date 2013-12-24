@@ -32,6 +32,8 @@
            smex
            color-theme-molokai
            coffee-mode
+           helm
+           helm-ag
            yasnippet))
   (if (not (package-installed-p package))
       (package-install package)))
