@@ -21,6 +21,7 @@ alias start_es='elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/confi
 # Mac aliases
 if [[ `uname` == 'Darwin' ]] then
   alias v='mvim'
+  alias e='/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs &'
   alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
   alias love="/Applications/love.app/Contents/MacOS/love"
 fi
@@ -74,9 +75,6 @@ export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 if [[ `uname` == 'Darwin' ]] then
   export PATH=$PATH:/users/akjones/lib/gradle/bin
 fi
-
-# Use Vim key bindings
-bindkey -v
 
 # Custom keybindings
 bindkey -M viins '^R' history-incremental-search-backward
