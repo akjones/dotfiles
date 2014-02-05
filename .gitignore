@@ -1,6 +1,6 @@
 .DS_Store
 .vim/.netrwhist
-.swo
+*.swo
 .swp
 *.swp
 [#]*[#]
