@@ -79,11 +79,13 @@
 (column-number-mode 1)
 (hl-line-mode t)
 
+(tool-bar-mode -1)
+
 ;; show time and battery status in mode line
 
 (display-time-mode 1)
 (setq display-time-format "%H:%M")
-(display-battery-mode 1)
+;;(display-battery-mode 1)
 
 ;; whitespace
 
