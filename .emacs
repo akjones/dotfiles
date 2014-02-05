@@ -32,6 +32,8 @@
            smex
            color-theme-molokai
            coffee-mode
+           haml-mode
+           projectile
            ag
            yasnippet))
   (if (not (package-installed-p package))
@@ -117,6 +119,8 @@
 (add-to-list 'safe-local-variable-values '(lexical-binding . t))
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq diff-switches "-u")
+
+(projectile-global-mode)
 
 (define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)
 
