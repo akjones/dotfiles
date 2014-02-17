@@ -7,6 +7,13 @@
 (global-set-key (kbd "C-c <down>") 'shrink-window)
 (global-set-key (kbd "C-c <up>") 'enlarge-window)
 
+(global-set-key (kbd "M-<up>") 'windmove-up)
+(global-set-key (kbd "M-<left>") 'windmove-left)
+(global-set-key (kbd "M-<right>") 'windmove-right)
+(global-set-key (kbd "M-<down>") 'windmove-down)
+
+(global-set-key (kbd "<RET>") 'newline-and-indent)
+
 ;;;;;;;;;;
 ;; elpa ;;
 ;;;;;;;;;;
@@ -23,7 +30,6 @@
 (when (null package-archive-contents)
   (package-refresh-contents))
 
-;; add/remove any packages you like here
 (dolist (package
          '(ido-ubiquitous
            magit
@@ -32,9 +38,12 @@
            smex
            color-theme-molokai
            coffee-mode
+           js2-mode
+           slime
            haml-mode
            projectile
            ag
+           auto-complete
            yasnippet))
   (if (not (package-installed-p package))
       (package-install package)))
@@ -61,6 +70,23 @@
 (ido-ubiquitous-mode 1)
 
 (global-set-key (kbd "M-x") 'smex)
+
+;; Backups
+
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
+(message "Deleting old backup files...")
+(let ((week (* 60 60 24 7))
+      (current (float-time (current-time))))
+  (dolist (file (directory-files temporary-file-directory t))
+    (when (and (backup-file-name-p file)
+               (> (- current (float-time (fifth (file-attributes file))))
+                  week))
+      (message "%s" file)
+      (delete-file file))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; display & appearance ;;
@@ -124,6 +150,10 @@
 
 (projectile-global-mode)
 
+(yas-global-mode 1)
+
+(global-auto-complete-mode)
+
 (define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -157,7 +187,6 @@
 ;; extempore ;;
 ;;;;;;;;;;;;;;;
 
-;; set the path to your extempore-directory
 (setq user-extempore-directory "/usr/local/Cellar/extempore/HEAD/")
 (autoload 'extempore-mode (concat user-extempore-directory "extras/extempore.el") "" t)
 (add-to-list 'auto-mode-alist '("\\.xtm$" . extempore-mode))
@@ -173,3 +202,28 @@
 ;;;;;;;;;;;;;;;;;;
 
 (custom-set-variables '(coffee-tab-width 2))
+
+;;;;;;;;;;;;;;;;
+;; javascript ;;
+;;;;;;;;;;;;;;;;
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+(custom-set-variables
+ '(js2-basic-offset 2)
+ '(js2-bounce-indent-p t))
+
+(setq js-indent-level 2)
+
+(add-hook 'js2-mode-hook
+          (lambda ()
+            (slime-js-minor-mode 1)))
+
+
+(eval-after-load 'js2-mode
+  '(define-key js2-mode-map (kbd "C-c C-l") 'slime-eval-buffer))
+
+(eval-after-load 'js2-mode
+  '(define-key js2-mode-map (kbd "C-c C-j") 'slime-connect))
+
+(global-set-key [f5] 'slime-js-reload)
