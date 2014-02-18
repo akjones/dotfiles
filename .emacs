@@ -36,9 +36,9 @@
            markdown-mode
            org
            smex
-           color-theme-molokai
-           coffee-mode
+           color-theme-solarized
            js2-mode
+           coffee-mode
            slime
            haml-mode
            projectile
@@ -120,6 +120,7 @@
 (setq whitespace-style '(face trailing lines-tail tabs))
 (setq whitespace-line-column 80)
 (add-to-list 'safe-local-variable-values '(whitespace-line-column . 80))
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; mark region commands as safe
 
@@ -170,7 +171,7 @@
 
 ;; color theme
 
-(color-theme-molokai)
+(load-theme 'solarized-dark t)
 
 ;; faces
 
@@ -225,5 +226,3 @@
 
 (eval-after-load 'js2-mode
   '(define-key js2-mode-map (kbd "C-c C-j") 'slime-connect))
-
-(global-set-key [f5] 'slime-js-reload)
