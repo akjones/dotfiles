@@ -72,13 +72,13 @@ export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 
+source ~/.nvm/nvm.sh
+alias node='$NVM_BIN/node'
+alias npm='$NVM_BIN/npm'
+
 if [[ `uname` == 'Darwin' ]] then
   export PATH=$PATH:/users/akjones/lib/gradle/bin
 fi
-
-# Custom keybindings
-bindkey -M viins '^R' history-incremental-search-backward
-bindkey -M vicmd '^R' history-incremental-search-backward
 
 # Environment variables
 if [[ `uname` == 'Linux' ]] then
