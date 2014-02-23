@@ -38,6 +38,7 @@
            smex
            color-theme-solarized
            js2-mode
+           expand-region
            coffee-mode
            slime
            haml-mode
@@ -70,23 +71,6 @@
 (ido-ubiquitous-mode 1)
 
 (global-set-key (kbd "M-x") 'smex)
-
-;; Backups
-
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
-
-(message "Deleting old backup files...")
-(let ((week (* 60 60 24 7))
-      (current (float-time (current-time))))
-  (dolist (file (directory-files temporary-file-directory t))
-    (when (and (backup-file-name-p file)
-               (> (- current (float-time (fifth (file-attributes file))))
-                  week))
-      (message "%s" file)
-      (delete-file file))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; display & appearance ;;
@@ -138,8 +122,24 @@
 
 (setq save-place t)
 (setq save-place-file (concat user-emacs-directory "places"))
-(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
 (setq recentf-max-saved-items 100)
+
+;; Backups
+
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
+(message "Deleting old backup files...")
+(let ((week (* 60 60 24 7))
+      (current (float-time (current-time))))
+  (dolist (file (directory-files temporary-file-directory t))
+    (when (and (backup-file-name-p file)
+               (> (- current (float-time (fifth (file-attributes file))))
+                  week))
+      (message "%s" file)
+      (delete-file file))))
 
 (global-auto-revert-mode t)
 
@@ -156,6 +156,9 @@
 (global-auto-complete-mode)
 
 (define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)
+
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
