@@ -38,6 +38,7 @@
            smex
            color-theme-solarized
            js2-mode
+           ace-jump-mode
            expand-region
            coffee-mode
            slime
@@ -72,9 +73,8 @@
 
 (global-set-key (kbd "M-x") 'smex)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; display & appearance ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; display & appearance
 
 (setq visible-bell t)
 (setq inhibit-startup-message t)
@@ -95,7 +95,6 @@
 
 (display-time-mode 1)
 (setq display-time-format "%H:%M")
-;;(display-battery-mode 1)
 
 ;; whitespace
 
@@ -157,8 +156,12 @@
 
 (define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)
 
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C--") 'er/contract-region)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
