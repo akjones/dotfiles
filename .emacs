@@ -12,6 +12,7 @@
 
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 
+(global-unset-key (kbd "C-x C-z"))
 
 ;; elpa
 
@@ -78,6 +79,7 @@
 
 ;; display & appearance
 
+(require 'color-theme)
 (setq visible-bell t)
 (setq inhibit-startup-message t)
 (setq color-theme-is-global t)
@@ -176,7 +178,8 @@
 
 ;; color theme
 
-(load-theme 'solarized-dark t)
+(require 'color-theme-solarized)
+(color-theme-solarized-dark)
 
 ;; faces
 
