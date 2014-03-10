@@ -1,6 +1,4 @@
-;;;;;;;;;;;;;;;;;;
-;; key bindings ;;
-;;;;;;;;;;;;;;;;;;
+;; key bindings
 
 (global-set-key (kbd "C-c <left>") 'shrink-window-horizontally)
 (global-set-key (kbd "C-c <right>") 'enlarge-window-horizontally)
@@ -14,9 +12,8 @@
 
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 
-;;;;;;;;;;
-;; elpa ;;
-;;;;;;;;;;
+
+;; elpa
 
 (require 'package)
 (setq package-archives
@@ -52,9 +49,7 @@
 
 (global-set-key (kbd "C-c p") 'list-packages)
 
-;;;;;;;;;;
-;; smex ;;
-;;;;;;;;;;
+;; smex
 
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (smex-initialize)
@@ -125,20 +120,17 @@
 
 ;; Backups
 
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+(defvar backup-directory-path (concat user-emacs-directory "backups"))
+(unless (file-exists-p backup-directory-path)
+  (make-directory backup-directory-path))
+(setq backup-directory-alist `((".*" . ,backup-directory-path)))
+(setq auto-save-file-name-transforms `((".*" ,backup-directory-path t)))
 
-(message "Deleting old backup files...")
-(let ((week (* 60 60 24 7))
-      (current (float-time (current-time))))
-  (dolist (file (directory-files temporary-file-directory t))
-    (when (and (backup-file-name-p file)
-               (> (- current (float-time (fifth (file-attributes file))))
-                  week))
-      (message "%s" file)
-      (delete-file file))))
+(setq backup-by-copying t
+  delete-old-versions t
+  kept-new-versions 6
+  kept-old-versions 2
+  version-control t)
 
 (global-auto-revert-mode t)
 
