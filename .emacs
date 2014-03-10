@@ -29,6 +29,7 @@
 
 (dolist (package
          '(ido-ubiquitous
+           flx-ido
            magit
            markdown-mode
            org
@@ -63,10 +64,16 @@
       ido-handle-duplicate-virtual-buffers 2
       ido-max-prospects 10)
 
+(require 'flx-ido)
 (ido-mode 1)
 (ido-ubiquitous-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+(setq ido-use-faces nil)
 
 (global-set-key (kbd "M-x") 'smex)
+
+(setq gc-cons-threshold 20000000) ;; do less garbage collection
 
 
 ;; display & appearance
