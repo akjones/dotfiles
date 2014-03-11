@@ -1,15 +1,5 @@
-# Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME='blinks'
-
-# Example aliases
-# alias zshconfig='mate ~/.zshrc'
-# alias ohmyzsh='mate ~/.oh-my-zsh'
 
 # General aliases
 alias runHotJetty='gradle -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1337 jettyRun'
@@ -20,11 +10,20 @@ alias start_es='elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/confi
 
 # Mac aliases
 if [[ `uname` == 'Darwin' ]] then
-  alias v='mvim'
   alias e='/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs &'
+  alias v='mvim'
   alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
   alias love="/Applications/love.app/Contents/MacOS/love"
 fi
+
+# Emacs aliases
+alias ed='emacs --daemon'
+alias edk='emacsclient -e "(kill-emacs)"'
+
+function ec() {
+  emacsclient -c -a "" "$*" &
+}
+
 
 # Git aliases
 alias gs='git status'
