@@ -39,6 +39,7 @@
            js2-mode
            ace-jump-mode
            expand-region
+           web-mode
            coffee-mode
            slime
            haml-mode
@@ -95,7 +96,7 @@
 
 (tool-bar-mode -1)
 
-;; show time and battery status in mode line
+;; show time in mode line
 
 (display-time-mode 1)
 (setq display-time-format "%H:%M")
@@ -129,11 +130,12 @@
 
 ;; Backups
 
-(defvar backup-directory-path (concat user-emacs-directory "backups"))
+(defconst backup-directory-path (concat user-emacs-directory "backups"))
 (unless (file-exists-p backup-directory-path)
   (make-directory backup-directory-path))
 (setq backup-directory-alist `((".*" . ,backup-directory-path)))
-(setq auto-save-file-name-transforms `((".*" ,backup-directory-path t)))
+(setq auto-save-file-name-transforms `(("\\`/[^/]*:\\([^/]*/\\)*\\([^/]*\\)\\'",
+                                        (concat backup-directory-path "\\2") t)))
 
 (setq backup-by-copying t
   delete-old-versions t
@@ -196,9 +198,7 @@
 ;; ;; variable-width font
 ;; (set-face-attribute 'variable-pitch nil :height base-face-height :family "Ubuntu")
 
-;;;;;;;;;;;;;;;
-;; extempore ;;
-;;;;;;;;;;;;;;;
+;; extempore
 
 (setq user-extempore-directory "/usr/local/Cellar/extempore/HEAD/")
 (autoload 'extempore-mode (concat user-extempore-directory "extras/extempore.el") "" t)
@@ -210,15 +210,11 @@
 (add-to-list 'auto-mode-alist '("\\.ir$" . llvm-mode))
 (add-to-list 'auto-mode-alist '("\\.ll$" . llvm-mode))
 
-;;;;;;;;;;;;;;;;;;
-;; coffeescript ;;
-;;;;;;;;;;;;;;;;;;
+;; coffeescript
 
 (custom-set-variables '(coffee-tab-width 2))
 
-;;;;;;;;;;;;;;;;
-;; javascript ;;
-;;;;;;;;;;;;;;;;
+;; javascript
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
@@ -238,3 +234,7 @@
 
 (eval-after-load 'js2-mode
   '(define-key js2-mode-map (kbd "C-c C-j") 'slime-connect))
+
+;; web-mode
+
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
