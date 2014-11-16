@@ -72,13 +72,13 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export PATH=$PATH:$NVM_BIN
 
-export NVM_DIR=~/.nvm
-source ~/.nvm/nvm.sh
-alias node='$NVM_BIN/node'
-alias npm='$NVM_BIN/npm'
-
 if [[ `uname` == 'Darwin' ]] then
   export PATH=$PATH:/Users/akjones/lib/gradle/bin
+
+  export NVM_DIR=~/.nvm
+  source ~/.nvm/nvm.sh
+  alias node='$NVM_BIN/node'
+  alias npm='$NVM_BIN/npm'
 fi
 
 # Environment variables
