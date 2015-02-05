@@ -42,6 +42,8 @@ alias rs='rails server thin'
 alias be='bundle exec'
 alias berspec='bundle exec rspec'
 
+alias b2d='$(boot2docker shellinit)'
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE='true'
 
