@@ -22,6 +22,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-haml'
 Bundle 'rking/ag.vim'
+Bundle 'fatih/vim-go'
 
 syntax on
 filetype plugin indent on
