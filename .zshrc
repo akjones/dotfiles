@@ -98,6 +98,11 @@ if [[ `uname` == 'Darwin' ]] then
   export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
   export PGDATA='/usr/local/var/postgres'
   export EXTEMPORE='/usr/local/Cellar/extempore/HEAD'
+
+  export GHC_DOT_APP="/opt/homebrew-cask/Caskroom/ghc/7.8.4-r0/ghc-7.8.4.app"
+  if [ -d "$GHC_DOT_APP" ]; then
+    export PATH="${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:/Users/akjones/.cabal/share/x86_64-osx-ghc-7.8.4:${PATH}"
+  fi
 fi
 
 # Automatically run Ruby scripts with "bundle exec" (but only when appropriate).
