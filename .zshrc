@@ -61,7 +61,7 @@ alias b2d='$(boot2docker shellinit)'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew gradle osx pip ruby gem rvm)
+plugins=(git brew osx pip ruby gem rvm)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
