@@ -10,7 +10,6 @@ alias start_es='elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/confi
 
 # Mac aliases
 if [[ `uname` == 'Darwin' ]] then
-  alias e='/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs &'
   alias v='mvim'
   alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
   alias love="/Applications/love.app/Contents/MacOS/love"
