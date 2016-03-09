@@ -51,7 +51,7 @@ values."
      sql
      yaml
      elixir
-     spotify
+     ;;spotify
      html
      )
    ;; List of additional packages that will be installed without being
