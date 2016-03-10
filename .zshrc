@@ -177,6 +177,7 @@ for CMD in $BUNDLED_COMMANDS; do
 done
 
 # boxen path
-export PATH=/opt/boxen/homebrew/bin:/opt/boxen/rbenv/bin:/opt/boxen/nodenv/bin:/opt/boxen/ruby-build/bin:/opt/boxen/rbenv/shims:$PATH
+export PATH=/opt/boxen/homebrew/bin:/opt/boxen/rbenv/bin:/opt/boxen/nodenv/bin:/opt/boxen/ruby-build/bin:/opt/boxen/rbenv/shims:/opt/boxen/homebrew/sbin:$PATH
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export RBENV_ROOT=/opt/boxen/rbenv
