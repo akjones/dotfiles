@@ -63,6 +63,7 @@ values."
                                       org-trello
                                       org-mobile
                                       slack
+                                      graphviz-dot-mode
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
