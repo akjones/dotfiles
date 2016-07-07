@@ -221,7 +221,7 @@ layers configuration. You are free to put any user code."
   ;; TODO: externalise autocomplete directories
   (setq org-directory "~/DropBox/org")
   (setq org-mobile-inbox-for-pull "~/DropBox/org/flagged.org")
-  (setq org-mobile-directory "~/Dropbox/org-mobile")
+  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
   (eval-after-load 'tern
     '(progn
        (require 'tern-auto-complete)
