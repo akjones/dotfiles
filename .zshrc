@@ -103,6 +103,8 @@ if [[ `uname` == 'Darwin' ]] then
   if [ -d "$GHC_DOT_APP" ]; then
     export PATH="${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:/Users/akjones/.cabal/share/x86_64-osx-ghc-7.8.4:${PATH}"
   fi
+
+  export HOMEBREW_NO_ANALYTICS=1
 fi
 
 # Automatically run Ruby scripts with "bundle exec" (but only when appropriate).
