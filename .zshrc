@@ -1,5 +1,5 @@
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME='blinks'
+ZSH_THEME='powerlevel9k/powerlevel9k'
 
 # General aliases
 alias runHotJetty='gradle -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1337 jettyRun'
