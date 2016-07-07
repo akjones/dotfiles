@@ -62,7 +62,6 @@ values."
    dotspacemacs-additional-packages '(
                                       org-trello
                                       org-mobile
-                                      slack
                                       graphviz-dot-mode
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -230,17 +229,6 @@ layers configuration. You are free to put any user code."
   (setq js2-highlight-level 3)
 
   (global-company-mode)
-
-  (use-package slack
-    :commands (slack-start)
-    :init
-    (setq slack-enable-emoji t) ;; if you want to enable emoji, default nil
-    (setq slack-room-subscription '())
-    (setq slack-client-id "14561530817.18716659155")
-    (setq slack-client-secret "eff21a57c59721922bbedec2ed5e1ede")
-    (setq slack-token "xoxp-14561530817-14564017234-18720248961-1520ac299e"))
-  (setq slack-user-name "akjones")
-
 
   (use-package alert
     :commands (alert)
