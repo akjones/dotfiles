@@ -503,8 +503,6 @@
 	<integer>2</integer>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
-	<key>MaxVertically</key>
-	<false/>
 	<key>NSNavLastRootDirectory</key>
 	<string>~</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -551,15 +549,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>186 320 606 456 0 0 1280 777 </string>
+	<string>520 599 606 456 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>526 561 384 129 0 0 1440 878 </string>
+	<string>438 324 400 129 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>328 288 620 392 0 0 1280 777 </string>
+	<string>288 116 700 622 0 0 1280 777 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>451 241 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 5 1274 768 0 0 1280 777 </string>
+	<string>0 11 1276 756 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>183 68 650 426 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -1301,6 +1299,8 @@
 	<true/>
 	<key>NoSyncConfirmBeta</key>
 	<true/>
+	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>14F88B44-7878-4689-9DE9-2C7E338C05B4</string>
 	<key>NoSyncLastTipTime</key>
@@ -1396,7 +1396,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-06-19T04:56:49Z</date>
+	<date>2016-12-18T22:02:48Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -1446,6 +1446,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.2</string>
+	<string>3.0.12</string>
 </dict>
 </plist>
