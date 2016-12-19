@@ -241,6 +241,19 @@ layers configuration. You are free to put any user code."
 
   (load-file (let ((coding-system-for-read 'utf-8))
                (shell-command-to-string "agda-mode locate")))
+
+  (require 'flycheck)
+  (setq-default flycheck-temp-prefix ".flycheck")
+  (setq-default flycheck-disabled-checkers
+                (append flycheck-disabled-checkers
+                        '(json-jsonlist)))
+
+  (setq-default flycheck-javascript-eslint-executable "/Users/akjones/projects/rabblerouser/healthdb-forms/node_modules/.bin/eslint")
+  (add-hook 'js2-mode-hook
+            (defun my-js2-mode-setup ()
+              (flycheck-mode t)
+              (when (executable-find "eslint")
+                (flycheck-select-checker 'javascript-eslint))))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
