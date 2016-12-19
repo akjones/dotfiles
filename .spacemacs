@@ -63,6 +63,8 @@ values."
                                       org-trello
                                       org-mobile
                                       graphviz-dot-mode
+                                      darkokai
+                                      terraform-mode
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -101,8 +103,10 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         monokai)
+   dotspacemacs-themes '(
+                         darkokai
+                         spacemacs-dark
+                         )
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
