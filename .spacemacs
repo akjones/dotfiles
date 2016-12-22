@@ -30,7 +30,6 @@ values."
      spell-checking
      syntax-checking
      version-control
-     osx
      ruby
      ruby-on-rails
      go
