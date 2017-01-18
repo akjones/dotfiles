@@ -94,6 +94,11 @@ if [[ `uname` == 'Linux' ]] then
   export ARDUINO_DIR=/home/andrew/lib/arduino
   export ARDMK_DIR=/home/andrew/projects/arduino/Arduino-Makefile
   export AVR_TOOLS_DIR=/usr
+
+  export NVM_DIR=~/.nvm
+  source ~/.nvm/nvm.sh
+  alias node='$NVM_BIN/node'
+  alias npm='$NVM_BIN/npm'
 fi
 
 if [[ `uname` == 'Darwin' ]] then
