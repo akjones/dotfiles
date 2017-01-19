@@ -11,4 +11,3 @@ ln -sf ${DIR}/.vimrc ~/.vimrc
 ln -sf ${DIR}/.ackrc ~/.ackrc
 ln -sf ${DIR}/.gemrc ~/.gemrc
 ln -sf ${DIR}/.rspec ~/.rspec
-ln -sf ${DIR}/.zazurc.json ~/.zazurc.json 
