@@ -42,6 +42,8 @@ alias rs='rails server thin'
 alias be='bundle exec'
 alias berspec='bundle exec rspec'
 
+# Python aliases
+alias virtualenv='python ~/.local/lib/python2.7/site-packages/virtualenv.py'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE='true'
