@@ -4,7 +4,6 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME='powerlevel9k/powerlevel9k'
 
 # General aliases
-alias runHotJetty='gradle -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1337 jettyRun'
 alias start_mongo='mongod run --config /usr/local/etc/mongod.conf'
 alias start_pg='pg_ctl -l /usr/local/var/postgres/server.log start'
 alias start_redis='redis-server /usr/local/etc/redis.conf'
@@ -43,7 +42,6 @@ alias rs='rails server thin'
 alias be='bundle exec'
 alias berspec='bundle exec rspec'
 
-alias b2d='$(boot2docker shellinit)'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE='true'
