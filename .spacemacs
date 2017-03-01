@@ -248,7 +248,8 @@ layers configuration. You are free to put any user code."
               (flycheck-mode t)
               (when (executable-find "eslint")
                 (flycheck-select-checker 'javascript-eslint))))
-)
+
+  (setq clojure-enable-fancify-symbols t))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
