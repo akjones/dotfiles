@@ -70,7 +70,7 @@ unsetopt correct_all
 unsetopt histverify
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/usr/local/share/npm/bin
+export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/usr/local/share/npm/bin:~/.local/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export PATH=$PATH:$NVM_BIN
