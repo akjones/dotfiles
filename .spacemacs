@@ -211,6 +211,10 @@ It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
   )
 
+(defun dotspacemacs-configuration-layers ()
+  '((ruby :variables ruby-version-manager 'rvm))
+  '((ruby :variables ruby-test-runner 'rspec)))
+
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
