@@ -63,7 +63,7 @@ alias virtualenv='python ~/.local/lib/python2.7/site-packages/virtualenv.py'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew osx pip ruby gem rvm)
+plugins=(git brew osx pip ruby gem rvm zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
