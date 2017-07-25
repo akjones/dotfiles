@@ -45,31 +45,12 @@ alias berspec='bundle exec rspec'
 # Python aliases
 alias virtualenv='python ~/.local/lib/python2.7/site-packages/virtualenv.py'
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE='true'
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE='true'
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS='true'
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE='true'
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS='true'
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git brew osx pip ruby gem rvm zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 unsetopt histverify
 
-# Customize to your needs...
 export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/usr/local/share/npm/bin:~/.local/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
@@ -114,73 +95,6 @@ if [[ `uname` == 'Darwin' ]] then
   export HOMEBREW_NO_ANALYTICS=1
 fi
 
-# Automatically run Ruby scripts with "bundle exec" (but only when appropriate).
-# http://effectif.com/ruby/automating-bundle-exec
-# Github: https://github.com/gma/bundler-exec
-
-## Functions
-
-bundler-installed()
-{
-    which bundle > /dev/null 2>&1
-}
-
-within-bundled-project()
-{
-    local dir="$(pwd)"
-    while [ "$(dirname $dir)" != "/" ]; do
-        [ -f "$dir/Gemfile" ] && return
-        dir="$(dirname $dir)"
-    done
-    false
-}
-
-run-with-bundler()
-{
-    if bundler-installed && within-bundled-project; then
-        bundle exec "$@"
-    else
-        "$@"
-    fi
-}
-
-## Main program
-
-BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-
-cap
-capify
-cucumber
-foreman
-guard
-haml
-html2haml
-jasmine
-jekyll
-rackup
-rake
-rake2thor
-rspec
-ruby
-sass
-sass-convert
-serve
-shotgun
-spec
-spork
-thin
-thor
-tilt
-tt
-turn
-unicorn
-unicorn_rails
-}"
-
-for CMD in $BUNDLED_COMMANDS; do
-    if [[ $CMD != "bundle" && $CMD != "gem" ]]; then
-        alias $CMD="run-with-bundler $CMD"
-    fi
-done
 
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
