@@ -51,11 +51,16 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 unsetopt histverify
 
-export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/usr/local/share/npm/bin:~/.local/bin
+export PATH=$PATH:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/usr/local/share/npm/bin:~/.local/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export PATH=$PATH:$NVM_BIN
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+export NVM_DIR=~/.nvm
+source ~/.nvm/nvm.sh
+alias node='$NVM_BIN/node'
+alias npm='$NVM_BIN/npm'
 
 if [[ `uname` == 'Darwin' ]] then
   export PATH=$PATH:/Users/akjones/lib/gradle/bin
@@ -68,21 +73,6 @@ if [[ `uname` == 'Darwin' ]] then
   export GOPATH=$HOME/projects/go
   export PATH=$PATH:$GOPATH/bin
 
-fi
-
-# Environment variables
-if [[ `uname` == 'Linux' ]] then
-  export ARDUINO_DIR=/home/andrew/lib/arduino
-  export ARDMK_DIR=/home/andrew/projects/arduino/Arduino-Makefile
-  export AVR_TOOLS_DIR=/usr
-
-  export NVM_DIR=~/.nvm
-  source ~/.nvm/nvm.sh
-  alias node='$NVM_BIN/node'
-  alias npm='$NVM_BIN/npm'
-fi
-
-if [[ `uname` == 'Darwin' ]] then
   export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
   export PGDATA='/usr/local/var/postgres'
   export EXTEMPORE='/usr/local/Cellar/extempore/HEAD'
@@ -95,6 +85,11 @@ if [[ `uname` == 'Darwin' ]] then
   export HOMEBREW_NO_ANALYTICS=1
 fi
 
+if [[ `uname` == 'Linux' ]] then
+  export ARDUINO_DIR=/home/andrew/lib/arduino
+  export ARDMK_DIR=/home/andrew/projects/arduino/Arduino-Makefile
+  export AVR_TOOLS_DIR=/usr
+fi
 
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
