@@ -50,6 +50,7 @@ values."
      spotify
      html
      puppet
+     csharp
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -64,6 +65,7 @@ values."
                                       terraform-mode
                                       dockerfile-mode
                                       ox-hugo
+                                      dotnet
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -219,6 +221,8 @@ user code."
           ("lambda" . 955) ; λ
           ))
 
+  (setq omnisharp-expected-server-version "1.29.0")
+  (setq omnisharp-debug t)
   (global-prettify-symbols-mode 1))
 
 (defun dotspacemacs-configuration-layers ()
