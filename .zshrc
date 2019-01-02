@@ -89,8 +89,15 @@ if [[ `uname` == 'Linux' ]] then
   export ARDUINO_DIR=/home/andrew/lib/arduino
   export ARDMK_DIR=/home/andrew/projects/arduino/Arduino-Makefile
   export AVR_TOOLS_DIR=/usr
+
+  function bw_unlock() {
+      export "$(bw unlock | grep '$ export' | awk '{ print $3}')"
+  }
+
+  alias clip='xsel -ib'
 fi
 
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 nvm use stable --silent
+
