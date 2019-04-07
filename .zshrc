@@ -101,6 +101,10 @@ if [[ `uname` == 'Linux' ]] then
   alias clip='xsel -ib'
 fi
 
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi
+
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 nvm use stable --silent
