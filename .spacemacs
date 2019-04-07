@@ -42,7 +42,6 @@ values."
      javascript
      lua
      python
-     racket
      scheme
      sql
      yaml
