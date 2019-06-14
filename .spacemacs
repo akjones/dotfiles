@@ -35,7 +35,10 @@ values."
      version-control
      ruby
      ruby-on-rails
-     go
+     (go :variables
+         go-use-golangci-lint t
+         godoc-at-point-function 'godoc-gogetdoc
+         gofmt-command "goimports")
      rust
      clojure
      haskell
@@ -46,6 +49,9 @@ values."
      yaml
      spotify
      html
+     ipython-notebook
+     docker
+     c-c++
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -53,17 +59,18 @@ values."
    ;; configuration in `dotspacemacs/config'.
    dotspacemacs-additional-packages '(
                                       extempore-mode
-                                      org-trello
-                                      org-mobile
                                       graphviz-dot-mode
-                                      darkokai
                                       terraform-mode
-                                      dockerfile-mode
                                       ox-hugo
-                                      dotnet
+                                      cyberpunk-theme
+                                      monokai-theme
+                                      flycheck-mypy
+                                      evil-colemak-basics
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    google-c-style
+                                    )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -100,7 +107,8 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         darkokai
+                         cyberpunk
+                         monokai
                          spacemacs-dark
                          )
    ;; If non nil the cursor color matches the state color.
@@ -211,14 +219,24 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
 
+  (global-evil-colemak-basics-mode)
   (setq prettify-symbols-alist
         '(
           ("lambda" . 955) ; λ
           ))
 
+  (defun make-it-go ()
+    (setq compile-command "go build -v && go test -v && golangci-lint")
+    (setq go-format-before-save t)
+    (define-key (current-local-map) "\C-c\C-c" 'compile))
+
+  (add-hook 'go-mode-hook 'make-it-go)
+
+  (setq c-default-style "gnu")
   (setq omnisharp-expected-server-version "1.29.0")
   (setq omnisharp-debug t)
-  (global-prettify-symbols-mode 1))
+  (global-prettify-symbols-mode 1)
+  )
 
 (defun dotspacemacs-configuration-layers ()
   '((ruby :variables ruby-version-manager 'rvm))
@@ -231,8 +249,6 @@ layers configuration. You are free to put any user code."
 
   ;; TODO: externalise autocomplete directories
   (setq org-directory "~/DropBox/org")
-  (setq org-mobile-inbox-for-pull "~/DropBox/org/flagged.org")
-  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
   (eval-after-load 'tern
     '(progn
        (require 'tern-auto-complete)
@@ -262,7 +278,7 @@ layers configuration. You are free to put any user code."
               (when (executable-find "eslint")
                 (flycheck-select-checker 'javascript-eslint))))
 
-  (setq clojure-enable-fancify-symbols t))
+  (setq clojure-enable-fancify-symbols t)
   (use-package ox-hugo
     :ensure t
     :after ox))
@@ -277,11 +293,12 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(agda2-include-dirs (quote ("/usr/local/lib/agda/src" ".")))
  '(evil-want-Y-yank-to-eol t)
+ '(fci-rule-color "#383838")
  '(org-agenda-files (quote ("~/Dropbox/org/todo.org")))
  '(org-trello-current-prefix-keybinding "C-c o")
  '(package-selected-packages
    (quote
-    (ox-hugo extempore-mode winum fuzzy flycheck-credo company-ansible inf-clojure nginx-mode ob-sml sml-mode csv-mode dockerfile-mode jinja2-mode ansible-doc ansible powerline parent-mode projectile request flx smartparens iedit anzu evil goto-chg undo-tree diminish hydra eval-sexp-fu highlight spinner bind-map bind-key packed f s dash pkg-info epl helm avy helm-core async popup package-build pug-mode ob-elixir minitest hide-comnt go-guru eslint-fix flymake-jslint hcl-mode faceup rake request-deferred deferred org alert log4e gntp markdown-mode json-snatcher json-reformat js2-mode multi haml-mode gitignore-mode fringe-helper git-gutter+ git-gutter pos-tip flycheck magit magit-popup git-commit with-editor web-completion-data dash-functional tern go-mode ghc haskell-mode inflections edn multiple-cursors paredit peg cider seq queue clojure-mode rust-mode inf-ruby yasnippet anaconda-mode pythonic company elixir-mode auto-complete yapfify uuidgen py-isort osx-dictionary org-projectile org-download livid-mode skewer-mode simple-httpd live-py-mode link-hint intero hlint-refactor helm-hoogle git-link flyspell-correct-helm flyspell-correct flycheck-mix eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff eshell-z dumb-jump company-ghci column-enforce-mode clojure-snippets cargo yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package toml-mode toc-org terraform-mode tagedit sql-indent spotify spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shm shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-end rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters racket-mode racer quelpa pyvenv pytest pyenv-mode py-yapf puppet-mode projectile-rails popwin pip-requirements persp-mode pcre2el pbcopy paradox page-break-lines osx-trash orgit org-trello org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lua-mode lorem-ipsum linum-relative leuven-theme less-css-mode launchctl json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-spotify helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets graphviz-dot-mode google-translate golden-ratio go-eldoc gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md geiser flycheck-rust flycheck-pos-tip flycheck-haskell flx-ido fill-column-indicator feature-mode fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eshell-prompt-extras esh-help emmet-mode elisp-slime-nav diff-hl define-word darkokai-theme cython-mode company-web company-tern company-statistics company-racer company-quickhelp company-go company-ghc company-cabal company-anaconda coffee-mode cmm-mode clj-refactor clean-aindent-mode cider-eval-sexp-fu chruby bundler buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (evil-colemak-basics evil-snipe disaster company-c-headers cmake-mode clang-format speed-type flycheck-mypy monokai-theme cyberpunk-theme docker tablist docker-tramp gradle-mode ein org-category-capture org-mime helm-spotify-plus ghub treepy graphql sesman ox-hugo extempore-mode winum fuzzy flycheck-credo company-ansible inf-clojure nginx-mode ob-sml sml-mode csv-mode dockerfile-mode jinja2-mode ansible-doc ansible powerline parent-mode projectile request flx smartparens iedit anzu evil goto-chg undo-tree diminish hydra eval-sexp-fu highlight spinner bind-map bind-key packed f s dash pkg-info epl helm avy helm-core async popup package-build pug-mode ob-elixir minitest hide-comnt go-guru eslint-fix flymake-jslint hcl-mode faceup rake request-deferred deferred org alert log4e gntp markdown-mode json-snatcher json-reformat js2-mode multi haml-mode gitignore-mode fringe-helper git-gutter+ git-gutter pos-tip flycheck magit magit-popup git-commit with-editor web-completion-data dash-functional tern go-mode ghc haskell-mode inflections edn multiple-cursors paredit peg cider seq queue clojure-mode rust-mode inf-ruby yasnippet anaconda-mode pythonic company elixir-mode auto-complete yapfify uuidgen py-isort osx-dictionary org-projectile org-download livid-mode skewer-mode simple-httpd live-py-mode link-hint intero hlint-refactor helm-hoogle git-link flyspell-correct-helm flyspell-correct flycheck-mix eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff eshell-z dumb-jump company-ghci column-enforce-mode clojure-snippets cargo yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package toml-mode toc-org terraform-mode tagedit sql-indent spotify spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shm shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-end rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters racket-mode racer quelpa pyvenv pytest pyenv-mode py-yapf puppet-mode projectile-rails popwin pip-requirements persp-mode pcre2el pbcopy paradox page-break-lines osx-trash orgit org-trello org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lua-mode lorem-ipsum linum-relative leuven-theme less-css-mode launchctl json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-spotify helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets graphviz-dot-mode google-translate golden-ratio go-eldoc gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md geiser flycheck-rust flycheck-pos-tip flycheck-haskell flx-ido fill-column-indicator feature-mode fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eshell-prompt-extras esh-help emmet-mode elisp-slime-nav diff-hl define-word darkokai-theme cython-mode company-web company-tern company-statistics company-racer company-quickhelp company-go company-ghc company-cabal company-anaconda coffee-mode cmm-mode clj-refactor clean-aindent-mode cider-eval-sexp-fu chruby bundler buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
