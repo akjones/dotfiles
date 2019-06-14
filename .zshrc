@@ -91,7 +91,7 @@ if [[ `uname` == 'Linux' ]] then
   export AVR_TOOLS_DIR=/usr
 
   export GOPATH=$HOME/src/go
-  export PATH=$PATH:$GOPATH/bin
+  export PATH=$PATH:$GOPATH/bin/*
   export PATH=$PATH:/opt/go/1.12.2/bin
 
   function bw_unlock() {
@@ -109,3 +109,6 @@ fi
 
 nvm use stable --silent
 
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
