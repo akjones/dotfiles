@@ -53,24 +53,10 @@ unsetopt histverify
 
 export PATH=$PATH:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/usr/local/share/npm/bin:~/.local/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
-export PATH=$PATH:$NVM_BIN
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
-export NVM_DIR=~/.nvm
-source ~/.nvm/nvm.sh
-alias node='$NVM_BIN/node'
-alias npm='$NVM_BIN/npm'
-
 if [[ `uname` == 'Darwin' ]] then
-  export PATH=$PATH:/Users/akjones/lib/gradle/bin
-
-  export NVM_DIR=~/.nvm
-  source ~/.nvm/nvm.sh
-  alias node='$NVM_BIN/node'
-  alias npm='$NVM_BIN/npm'
-
-  export GOPATH=$HOME/projects/go
+  export GOPATH=$HOME/src/go
   export PATH=$PATH:$GOPATH/bin
 
   export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
@@ -107,7 +93,9 @@ fi
 
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
-nvm use stable --silent
+if command -v nvm 2>/dev/null; then
+    nvm use stable --silent
+fi
 
 
 # add Pulumi to the PATH
