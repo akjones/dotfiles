@@ -2,6 +2,9 @@ export TERM="xterm-256color"
 
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME='powerlevel9k/powerlevel9k'
+if [[ `uname` == 'Darwin' ]] then
+    POWERLEVEL9K_MODE='nerdfont-complete'
+fi
 
 # General aliases
 alias start_mongo='mongod run --config /usr/local/etc/mongod.conf'
