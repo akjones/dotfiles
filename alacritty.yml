@@ -60,7 +60,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Fullscreen
+  startup_mode: Maximized
 
   # Window title
   #title: Alacritty
@@ -337,8 +337,8 @@ live_config_reload: true
 #   - (Windows) powershell
 shell:
  program: /usr/local/bin/tmux
- # args:
- #   - --login
+ args:
+   - -u
 
 # Startup directory
 #
