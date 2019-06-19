@@ -54,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 unsetopt histverify
 
-export PATH=$PATH:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/usr/local/share/npm/bin:~/.local/bin
+export PATH=$PATH:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/usr/local/share/npm/bin:~/.local/bin:/usr/local/sbin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
