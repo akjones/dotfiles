@@ -12,8 +12,6 @@ ln -sf ${DIR}/.ackrc ~/.ackrc
 ln -sf ${DIR}/.gemrc ~/.gemrc
 ln -sf ${DIR}/.rspec ~/.rspec
 ln -sf ${DIR}/.tmux.conf ~/.tmux.conf
-mkdir -p ~/.config/terminator/
-ln -sf ${DIR}/terminator/config ~/.config/terminator/
 
 mkdir -p ~/.config/alacritty
-ln -sf ${DIR}/alacritty.yml ~/.config/alacritty/alacritty.yml 
+ln -sf ${DIR}/alacritty.yml ~/.config/alacritty/alacritty.yml
