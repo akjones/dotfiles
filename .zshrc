@@ -101,3 +101,5 @@ export PATH=$PATH:$HOME/.pulumi/bin
 asdf_init=$(brew --prefix asdf)/asdf.sh
 chmod 755 $asdf_init
 $asdf_init
+
+fortune | ponysay
