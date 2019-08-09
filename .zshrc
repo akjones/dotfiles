@@ -6,12 +6,6 @@ if [[ `uname` == 'Darwin' ]] then
     POWERLEVEL9K_MODE='nerdfont-complete'
 fi
 
-# General aliases
-alias start_mongo='mongod run --config /usr/local/etc/mongod.conf'
-alias start_pg='pg_ctl -l /usr/local/var/postgres/server.log start'
-alias start_redis='redis-server /usr/local/etc/redis.conf'
-alias start_es='elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml'
-
 # Mac aliases
 if [[ `uname` == 'Darwin' ]] then
   alias v='mvim'
