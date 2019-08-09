@@ -39,18 +39,13 @@ alias rs='rails server thin'
 alias be='bundle exec'
 alias berspec='bundle exec rspec'
 
-# Python aliases
-alias virtualenv='python ~/.local/lib/python2.7/site-packages/virtualenv.py'
-
 plugins=(git asdf brew osx zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 unsetopt histverify
 
-export PATH=$PATH:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:/usr/local/share/npm/bin:~/.local/bin:/usr/local/sbin
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:~/.local/bin:/usr/local/sbin
 
 if [[ `uname` == 'Darwin' ]] then
   export GOPATH=$HOME/src/go
@@ -59,11 +54,6 @@ if [[ `uname` == 'Darwin' ]] then
   export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
   export PGDATA='/usr/local/var/postgres'
   export EXTEMPORE='/usr/local/Cellar/extempore/HEAD'
-
-  export GHC_DOT_APP="/opt/homebrew-cask/Caskroom/ghc/7.8.4-r0/ghc-7.8.4.app"
-  if [ -d "$GHC_DOT_APP" ]; then
-    export PATH="${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:/Users/akjones/.cabal/share/x86_64-osx-ghc-7.8.4:${PATH}"
-  fi
 
   export HOMEBREW_NO_ANALYTICS=1
 fi
@@ -87,13 +77,6 @@ fi
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
-
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
-
-if command -v nvm 2>/dev/null; then
-    nvm use stable --silent
-fi
-
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
