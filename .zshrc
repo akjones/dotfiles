@@ -42,7 +42,7 @@ alias berspec='bundle exec rspec'
 # Python aliases
 alias virtualenv='python ~/.local/lib/python2.7/site-packages/virtualenv.py'
 
-plugins=(git brew osx pip ruby gem rvm zsh-syntax-highlighting)
+plugins=(git asdf brew osx zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -97,3 +97,7 @@ fi
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+
+asdf_init=$(brew --prefix asdf)/asdf.sh
+chmod 755 $asdf_init
+$asdf_init
