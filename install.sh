@@ -13,6 +13,7 @@ ln -sf ${DIR}/.ackrc ~/.ackrc
 ln -sf ${DIR}/.gemrc ~/.gemrc
 ln -sf ${DIR}/.rspec ~/.rspec
 ln -sf ${DIR}/.tmux.conf ~/.tmux.conf
+ln -sf ${DIR}/.tool-versions ~/.tool-versions
 
 mkdir -p ~/.config/alacritty
 ln -sf ${DIR}/alacritty.yml ~/.config/alacritty/alacritty.yml
