@@ -57,4 +57,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
+asdf current java > /dev/null && export JAVA_HOME=$(asdf where java $(asdf current java | cut -d ' ' -f 1))
+export PATH=$PATH:/$JAVA_HOME/bin
+
 fortune | ponysay
