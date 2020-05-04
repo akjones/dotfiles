@@ -37,6 +37,8 @@ alias rs='rails server thin'
 alias be='bundle exec'
 alias berspec='bundle exec rspec'
 
+alias arst='asdf'
+
 if [[ `uname` == 'Darwin' ]] then
   export HOMEBREW_NO_ANALYTICS=1
 fi
