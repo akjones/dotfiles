@@ -61,3 +61,5 @@ asdf current java > /dev/null && export JAVA_HOME=$(asdf where java $(asdf curre
 export PATH=$PATH:/$JAVA_HOME/bin
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+source /Users/akjones/.asdf/installs/rust/1.41.0/env
