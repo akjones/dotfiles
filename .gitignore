@@ -16,3 +16,4 @@
 .emacs.d/ac-comphist.dat
 .emacs.d/eshell
 .tern-port
+tmux-client-*.log
