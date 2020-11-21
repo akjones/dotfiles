@@ -14,6 +14,7 @@ ln -sf ${DIR}/.gemrc ~/.gemrc
 ln -sf ${DIR}/.rspec ~/.rspec
 ln -sf ${DIR}/.tmux.conf ~/.tmux.conf
 ln -sf ${DIR}/.tool-versions ~/.tool-versions
+ln -sf ${DIR}/.doom.d ~/.doom.d
 
 mkdir -p ~/.config/alacritty
 ln -sf ${DIR}/alacritty.yml ~/.config/alacritty/alacritty.yml
