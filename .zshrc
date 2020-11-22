@@ -59,7 +59,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
-asdf current java > /dev/null && export JAVA_HOME=$(asdf where java $(asdf current java | cut -d ' ' -f 1))
+asdf current java > /dev/null 2>&1 && export JAVA_HOME=$(asdf where java $(asdf current java | cut -d ' ' -f 1))
 export PATH=$PATH:/$JAVA_HOME/bin
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
