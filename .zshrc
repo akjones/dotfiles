@@ -6,7 +6,7 @@ if [[ `uname` == 'Darwin' ]] then
     POWERLEVEL9K_MODE='nerdfont-complete'
 fi
 
-plugins=(git asdf brew osx zsh-syntax-highlighting)
+plugins=(git brew osx zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -60,12 +60,19 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
+ASDF_DIR=$HOME/.asdf/asdf.sh
+source ${ASDF_DIR}
+
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit
+compinit
+
 asdf current java > /dev/null 2>&1 && export JAVA_HOME=$(asdf where java $(asdf current java | cut -d ' ' -f 1))
 export PATH=$PATH:/$JAVA_HOME/bin
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-source /Users/akjones/.asdf/installs/rust/1.41.0/env
+source /Users/akjones/.asdf/installs/rust/1.40.0/env
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
