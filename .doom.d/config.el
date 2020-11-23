@@ -54,3 +54,19 @@
 ;; they are implemented.
 
 (add-to-list 'auto-mode-alist '("\\.gs\\'" . javascript-mode))
+
+(use-package! evil-colemak-basics
+  :after evil
+  :config
+  (setq evil-colemak-basics-rotate-t-f-j t))
+
+(after! evil (global-evil-colemak-basics-mode))
+
+(after! evil
+  (map! :map evil-window-map
+        (:leader
+         (:prefix ("w" . "Select Window")
+          :n :desc "Left"  "h" 'evil-window-left
+          :n :desc "Up"    "e" 'evil-window-up
+          :n :desc "Down"  "n" 'evil-window-down
+          :n :desc "Right" "i" 'evil-window-right))))
