@@ -54,10 +54,8 @@ if [[ `uname` == 'Linux' ]] then
   }
 
   alias clip='xsel -ib'
-fi
 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
+  source /usr/share/autojump/autojump.sh
 fi
 
 ASDF_DIR=$HOME/.asdf/asdf.sh
