@@ -58,8 +58,8 @@ if [[ `uname` == 'Linux' ]] then
   source /usr/share/autojump/autojump.sh
 fi
 
-ASDF_DIR=$HOME/.asdf/asdf.sh
-source ${ASDF_DIR}
+ASDF_DIR=$HOME/.asdf
+source ${ASDF_DIR}/asdf.sh
 
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit
