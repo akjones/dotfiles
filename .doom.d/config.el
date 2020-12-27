@@ -73,3 +73,5 @@
 
 (require 'rvm)
 (rvm-use-default)
+
+(setq projectile-indexing-method 'native)
