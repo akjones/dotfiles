@@ -63,9 +63,11 @@ cursor:
 live_config_reload: true
 
 shell:
-  program: /usr/local/bin/tmux
+  program: /bin/zsh
   args:
-    - -u
+    - -l
+    - -c
+    - "tmux attach || tmux"
 
 working_directory: None
 
