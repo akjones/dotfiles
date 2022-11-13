@@ -65,7 +65,7 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit
 compinit
 
-asdf current java > /dev/null 2>&1 && export JAVA_HOME=$(asdf where java $(asdf current java | cut -d ' ' -f 1))
+asdf current java > /dev/null 2>&1 && export JAVA_HOME=$(asdf where java)
 export PATH=$PATH:/$JAVA_HOME/bin
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
