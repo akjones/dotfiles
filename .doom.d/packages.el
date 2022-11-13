@@ -51,3 +51,4 @@
 
 (package! evil-colemak-basics)
 (package! prettier-js)
+(package! php-mode)
