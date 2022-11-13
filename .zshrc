@@ -6,7 +6,7 @@ if [[ `uname` == 'Darwin' ]] then
     POWERLEVEL9K_MODE='nerdfont-complete'
 fi
 
-plugins=(git brew osx zsh-syntax-highlighting)
+plugins=(git brew macos zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
