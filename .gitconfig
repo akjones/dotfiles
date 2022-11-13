@@ -21,3 +21,5 @@
 	keepBackup = false
 [push]
 	default = tracking
+[init]
+	defaultBranch = main
