@@ -16,4 +16,4 @@ ln -sf ${DIR}/.tool-versions ~/.tool-versions
 ln -sf ${DIR}/.doom.d ~/.doom.d
 
 mkdir -p ~/.config/alacritty
-ln -sf ${DIR}/alacritty.yml ~/.config/alacritty/alacritty.yml
+ln -sf ${DIR}/alacritty.toml ~/.config/alacritty/alacritty.toml
