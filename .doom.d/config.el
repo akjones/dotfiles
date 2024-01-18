@@ -76,22 +76,22 @@
 (require 'rvm)
 (rvm-use-default)
 
-(setq projectile-indexing-method 'native)
+(setq projectile-indexing-method 'alien)
 
 (require 'flycheck)
 (defun tide-setup-hook ()
-    (tide-setup)
-    (eldoc-mode)
-    (run-import-js)
-    (tide-hl-identifier-mode +1)
-    (setq web-mode-enable-auto-quoting nil)
-    (setq web-mode-markup-indent-offset 2)
-    (setq web-mode-code-indent-offset 2)
-    (setq web-mode-attr-indent-offset 2)
-    (setq web-mode-attr-value-indent-offset 2)
-    (set (make-local-variable 'company-backends)
-         '((company-tide company-files :with company-yasnippet)
-           (company-dabbrev-code company-dabbrev))))
+  (tide-setup)
+  (eldoc-mode)
+  (run-import-js)
+  (tide-hl-identifier-mode +1)
+  (setq web-mode-enable-auto-quoting nil)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-attr-indent-offset 2)
+  (setq web-mode-attr-value-indent-offset 2)
+  (set (make-local-variable 'company-backends)
+       '((company-tide company-files :with company-yasnippet)
+         (company-dabbrev-code company-dabbrev))))
 
 ;; hooks
 (add-hook 'before-save-hook 'tide-format-before-save)
@@ -106,8 +106,8 @@
 ;; web-mode extra config
 (add-hook 'web-mode-hook 'tide-setup-hook
           (lambda () (pcase (file-name-extension buffer-file-name)
-                  ("tsx" ('tide-setup-hook))
-                  (_ (my-web-mode-hook)))))
+                       ("tsx" ('tide-setup-hook))
+                       (_ (my-web-mode-hook)))))
 (flycheck-add-mode 'typescript-tslint 'web-mode)
 (add-hook 'web-mode-hook 'company-mode)
 (add-hook 'web-mode-hook 'prettier-js-mode)
@@ -122,3 +122,5 @@
 
 ;; company-mode
 (global-company-mode)
+
+(exec-path-from-shell-initialize)
