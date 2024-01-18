@@ -14,6 +14,7 @@ ln -sf ${DIR}/.rspec ~/.rspec
 ln -sf ${DIR}/.tmux.conf ~/.tmux.conf
 ln -sf ${DIR}/.tool-versions ~/.tool-versions
 ln -sf ${DIR}/.doom.d ~/.doom.d
+ln -sf ${DIR}/.p10k.zsh ~/.p10k.zsh
 
 mkdir -p ~/.config/alacritty
 ln -sf ${DIR}/alacritty.toml ~/.config/alacritty/alacritty.toml
