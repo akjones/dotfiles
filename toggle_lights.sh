@@ -1,17 +1,27 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 set -e
 
+source $(brew --prefix asdf)/libexec/asdf.sh
+jq=$(brew --prefix jq)/bin/jq
+
+sound_lights='--host 192.168.3.59'
+
+asdf exec pip list | grep python-kasa > /dev/null 2>&1
+if [[ $? -ne 0 ]]; then
+    asdf exec pip install python-kasa
+fi
+
 on() {
-   asdf exec kasa --type plug --alias 'Sound & lights' on
+   asdf exec kasa --type plug "${=sound_lights}" on
 }
 
 off() {
-   asdf exec kasa --type plug --alias 'Sound & lights' off
+   asdf exec kasa --type plug "${=sound_lights}" off
 }
 
 state() {
-   echo $(asdf exec kasa --json --type plug --alias 'Sound & lights' state | jq .system.get_sysinfo.on_time)
+   asdf exec kasa --json --type plug "${=sound_lights}" state | $jq .system.get_sysinfo.on_time
 }
 
 current=$(state)
