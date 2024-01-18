@@ -76,7 +76,6 @@ autojump_init=$(brew --prefix autojump)/etc/profile.d/autojump.sh
 [ -f ${autojump_init} ] && . ${autojump_init}
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 asdf_init=$(brew --prefix asdf)/libexec/asdf.sh
