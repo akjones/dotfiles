@@ -72,7 +72,8 @@ compinit
 asdf current java > /dev/null 2>&1 && export JAVA_HOME=$(asdf where java)
 export PATH=$PATH:/$JAVA_HOME/bin
 
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+autojump_init=$(brew --prefix autojump)/etc/profile.d/autojump.sh
+[ -f ${autojump_init} ] && . ${autojump_init}
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
