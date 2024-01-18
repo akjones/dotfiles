@@ -78,5 +78,12 @@ export PATH=$PATH:/$JAVA_HOME/bin
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+asdf_init=$(brew --prefix asdf)/libexec/asdf.sh
+asdf_completions=$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+chmod 755 $asdf_init
+chmod 755 $asdf_completions
+source $asdf_init
+$asdf_completions
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
