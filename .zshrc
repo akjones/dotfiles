@@ -85,6 +85,6 @@ $asdf_completions
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-for file in ~/.akj_profiles/*; do
+for file in ~/.akj_profiles/*(N); do
   source "${file}"
 done
