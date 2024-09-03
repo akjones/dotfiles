@@ -73,8 +73,8 @@
           :n :desc "Down"  "n" 'evil-window-down
           :n :desc "Right" "i" 'evil-window-right))))
 
-(require 'rvm)
-(rvm-use-default)
+;; (require 'rvm)
+;; (rvm-use-default)
 
 (setq projectile-indexing-method 'alien)
 
