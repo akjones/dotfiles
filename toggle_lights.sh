@@ -5,7 +5,7 @@ set -e
 source $(brew --prefix asdf)/libexec/asdf.sh
 jq=$(brew --prefix jq)/bin/jq
 
-sound_lights='--host 192.168.3.58'
+sound_lights='--host 192.168.3.59'
 
 asdf exec pip list | grep python-kasa > /dev/null 2>&1
 if [[ $? -ne 0 ]]; then
