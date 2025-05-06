@@ -10,7 +10,7 @@ export TERM="xterm-256color"
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME='powerlevel10k/powerlevel10k'
 
-plugins=(git brew macos zsh-syntax-highlighting)
+plugins=(git brew macos asdf zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -46,6 +46,10 @@ alias arst='asdf'
 
 if [[ `uname` == 'Darwin' ]] then
   export HOMEBREW_NO_ANALYTICS=1
+
+  autojump_init=$(brew --prefix autojump)/etc/profile.d/autojump.sh
+  [ -f ${autojump_init} ] && . ${autojump_init}
+
 fi
 
 if [[ `uname` == 'Linux' ]] then
@@ -62,25 +66,9 @@ if [[ `uname` == 'Linux' ]] then
   source /usr/share/autojump/autojump.sh
 fi
 
-ASDF_DIR=$HOME/.asdf
-source ${ASDF_DIR}/asdf.sh
-
-fpath=(${ASDF_DIR}/completions $fpath)
-autoload -Uz compinit
-compinit
-
-autojump_init=$(brew --prefix autojump)/etc/profile.d/autojump.sh
-[ -f ${autojump_init} ] && . ${autojump_init}
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-asdf_init=$(brew --prefix asdf)/libexec/asdf.sh
-asdf_completions=$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
-chmod 755 $asdf_init
-chmod 755 $asdf_completions
-source $asdf_init
-$asdf_completions
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
