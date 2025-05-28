@@ -76,3 +76,8 @@ fi
 for file in ~/.akj_profiles/*(N); do
   source "${file}"
 done
+
+if [ -f ~/.asdf/plugins/dotnet/set-dotnet-env.zsh ]; then
+    . ~/.asdf/plugins/dotnet/set-dotnet-env.zsh
+fi
+
