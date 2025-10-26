@@ -1,1 +1,2 @@
-export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:~/.local/bin:/usr/local/sbin:/opt/homebrew/bin:~/.config/emacs/bin:~/.emacs.d/bin:/opt/homebrew/opt/util-linux/sbin:/opt/homebrew/opt/util-linux/bin:~/.jenv/bin:~/.rvm/bin:~/.asdf/shims
+export PATH=/opt/homebrew/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/usr/local/git/bin:/opt/local/bin:~/.local/bin:/usr/local/sbin:~/.config/emacs/bin:~/.emacs.d/bin:/opt/homebrew/opt/util-linux/sbin:/opt/homebrew/opt/util-linux/bin:~/.jenv/bin:~/.rvm/bin:~/.asdf/shims:/opt/homebrew/sbin:$HOME/.cargo/bin
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock

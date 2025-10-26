@@ -50,6 +50,8 @@ if [[ `uname` == 'Darwin' ]] then
   autojump_init=$(brew --prefix autojump)/etc/profile.d/autojump.sh
   [ -f ${autojump_init} ] && . ${autojump_init}
 
+  export PATH=/opt/homebrew/bin:$PATH
+
 fi
 
 if [[ `uname` == 'Linux' ]] then
@@ -66,10 +68,6 @@ if [[ `uname` == 'Linux' ]] then
   source /usr/share/autojump/autojump.sh
 fi
 
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -80,4 +78,3 @@ done
 if [ -f ~/.asdf/plugins/dotnet/set-dotnet-env.zsh ]; then
     . ~/.asdf/plugins/dotnet/set-dotnet-env.zsh
 fi
-
