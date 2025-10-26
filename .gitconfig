@@ -1,6 +1,7 @@
 [user]
 	name = Andrew Jones
 	email = andrew@andrewjones.id.au
+	signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIcK9GVUyI6MUF3jkD0od3xqowXsnzrk008NJEc0aEUJ
 [color]
 	ui = true
 [diff]
@@ -23,3 +24,10 @@
 	default = tracking
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+	allowedSignersFile = ~/.ssh/allowed_signers
+[commit]
+	gpgSign = true
