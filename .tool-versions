@@ -4,8 +4,10 @@ java openjdk-11
 scala 2.11.8
 clojure 1.10.1
 lein 2.9.4
-rust 1.40.0
+rust 1.88.0
 ruby 2.7.2
-nodejs 16.17.0
+nodejs 24.4.0
 yarn 1.22.19
 dotnet 9.0.300
+global rust 1.88.0
+golang 1.25.0
