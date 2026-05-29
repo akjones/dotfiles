@@ -17,3 +17,4 @@
 .emacs.d/eshell
 .tern-port
 tmux-client-*.log
+.idea
